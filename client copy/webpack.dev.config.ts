@@ -10,7 +10,7 @@ interface Configuration extends WebpackConfiguration {
 const config: Configuration = {
     mode: "development",
     output: {
-        publicPath: "/",
+        publicPath: "public/",
     },
     entry: "./src/index.tsx",
     module: {
@@ -37,11 +37,7 @@ const config: Configuration = {
         },
         extensions: [".tsx", ".ts", ".js"],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "public/index.html",
-        }),
-    ],
+
     devtool: "inline-source-map",
     devServer: {
         static: path.join(__dirname, "build"),
